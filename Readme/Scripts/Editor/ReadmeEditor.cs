@@ -4,6 +4,7 @@ using UnityEditor;
 using System.IO;
 using System.Reflection;
 using System.Linq;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 namespace ReadmeSystem.Editor
 {
@@ -179,6 +180,9 @@ namespace ReadmeSystem.Editor
             }
             GUILayout.EndHorizontal();
         }
+
+
+
         public static void DrawInspectorGUI(Readme readme)
         {
             if (readme == null)
@@ -197,18 +201,38 @@ namespace ReadmeSystem.Editor
                     //Add Horizontal Bar
                     if (section.heading != "") { EditorGUILayout.LabelField("", GUI.skin.horizontalSlider); }
                 }
-                if (!string.IsNullOrEmpty(section.text))
+
+
+                if (!string.IsNullOrEmpty(section.richText))
                 {
                     if (string.IsNullOrEmpty(section.name))
-                        section.name = "Text: " + section.text;
+                        section.name = "Text: " + section.richText;
 
-                    GUILayout.Label(section.text, ReadmeEditorStyles.BodyStyle);
+                    GUILayout.Label(section.richText, ReadmeEditorStyles.BodyStyle);
                 }
+
+
+                if (!string.IsNullOrEmpty(section.ImageText))
+                {
+
+                        if (string.IsNullOrEmpty(section.name))
+                        section.name = "Image: " + section.richText;
+
+                    GUILayout.Box(section.ImageIcon, GUILayout.Height(section.ImageIcon.height), GUILayout.MaxWidth(Screen.width), GUILayout.ExpandWidth(true));
+
+                    //GUILayout.Label(section.ImageText, ReadmeEditorStyles.BodyStyle);
+
+                    if (ReadmeEditorStyles.LinkLabel(new GUIContent(section.ImageText)))
+                    {
+                        Application.OpenURL(section.src);
+                    }
+                }
+
                 if (!string.IsNullOrEmpty(section.linkText))
                 {
 
                     if (string.IsNullOrEmpty(section.name))
-                        section.name = "Link: " + section.text;
+                        section.name = "Link: " + section.richText;
 
                     if (ReadmeEditorStyles.LinkLabel(new GUIContent(section.linkText)))
                     {
@@ -229,6 +253,8 @@ namespace ReadmeSystem.Editor
         {
 
         }
+
+
         private void ResetSectionsLabel(Readme readme)
         {
 
@@ -241,18 +267,25 @@ namespace ReadmeSystem.Editor
                     section.name = "Header -" + section.heading;
 
                 }
-                if (!string.IsNullOrEmpty(section.text))
+                if (!string.IsNullOrEmpty(section.richText))
                 {
                     if (string.IsNullOrEmpty(section.name))
-                        section.name = "Text: " + section.text;
+                        section.name = "Text: " + section.richText;
 
                 }
                 if (!string.IsNullOrEmpty(section.linkText))
                 {
 
                     if (string.IsNullOrEmpty(section.name))
-                        section.name = "Link: " + section.text;
+                        section.name = "Link: " + section.richText;
 
+                }
+
+                if (!string.IsNullOrEmpty(section.ImageText))
+                {
+
+                    if (string.IsNullOrEmpty(section.name))
+                        section.name = "Image: " + section.richText;
 
                 }
 

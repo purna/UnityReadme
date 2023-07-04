@@ -1,5 +1,6 @@
 ﻿using ReadmeSystem;
 using ReadmeSystem.Editor;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -16,6 +17,10 @@ public class ReadmeHierarchy
         EditorApplication.hierarchyWindowItemOnGUI += DrawHierarchyItem;
     }
 
+    internal static void DrawHierarchyItem(int v, object instanceID, Rect rect, object selectionRect)
+    {
+        throw new NotImplementedException();
+    }
 
     private static void DrawHierarchyItem(int instanceID, Rect selectionRect)
     {

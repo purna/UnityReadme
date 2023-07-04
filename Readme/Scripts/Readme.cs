@@ -26,7 +26,9 @@ namespace ReadmeSystem
             public string name;
             public string heading;
             [TextArea(5,255)]
-            public string text;
+            public string richText;
+            public string ImageText, src;
+            public Texture2D ImageIcon;
             public string linkText, url;
         }
     }

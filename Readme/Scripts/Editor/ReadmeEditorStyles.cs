@@ -8,6 +8,9 @@ public static class ReadmeEditorStyles
     private static GUIStyle m_LinkStyle;
     public static GUIStyle LinkStyle { get { return m_LinkStyle; } }
 
+    private static GUIStyle m_ImageStyle;
+    public static GUIStyle ImageStyle { get { return m_ImageStyle; } }
+
     public static GUIStyle TitleStyle { get { return m_TitleStyle; } }
     private static GUIStyle m_TitleStyle;
 
@@ -42,6 +45,13 @@ public static class ReadmeEditorStyles
         m_LinkStyle.normal.textColor = new Color(0x00 / 255f, 0x78 / 255f, 0xDA / 255f, 1f);
         m_LinkStyle.stretchWidth = false;
 
+
+        m_ImageStyle = new GUIStyle(m_BodyStyle);
+        m_ImageStyle.wordWrap = false;
+        // Match selection color which works nicely for both light and dark skins
+        m_ImageStyle.normal.textColor = new Color(0x00 / 255f, 0x78 / 255f, 0xDA / 255f, 1f);
+        m_ImageStyle.stretchWidth = false;
+
     }
 
     public static bool LinkLabel(GUIContent label, params GUILayoutOption[] options)
@@ -57,6 +67,23 @@ public static class ReadmeEditorStyles
         EditorGUIUtility.AddCursorRect(position, MouseCursor.Link);
 
         return GUI.Button(position, label, ReadmeEditorStyles.LinkStyle);
+    }
+
+
+    public static bool ImageLabel(GUIContent label, params GUILayoutOption[] options)
+    {
+        var position = GUILayoutUtility.GetRect(label, ReadmeEditorStyles.ImageStyle, options);
+
+        Handles.BeginGUI();
+        Handles.color = ReadmeEditorStyles.LinkStyle.normal.textColor;
+
+        Handles.DrawLine(new Vector3(position.xMin, position.yMax), new Vector3(position.xMax, position.yMax));
+        Handles.color = Color.white;
+        Handles.EndGUI();
+
+        EditorGUIUtility.AddCursorRect(position, MouseCursor.Link);
+
+        return GUI.Button(position, label, ReadmeEditorStyles.ImageStyle);
     }
 
 }

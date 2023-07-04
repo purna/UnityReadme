@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: UnityReadmeSample
   m_EditorClassIdentifier: 
   icon: {fileID: 2800000, guid: 34f556d724b1bbf4097ca6220db2c581, type: 3}
+  iconMaxWidth: 128
   title: UNITY README
   sections:
-  - name: 'Text: UnityReadme...'
-    heading: 
+  - heading: 
     text: "UnityReadme is a simple but functional system, allows you to add Readme
       in asset format to the project and scene objects.\n\nThis is intended to improve
       communication with the team working on the project and also to allow other
@@ -25,27 +25,27 @@ MonoBehaviour:
       project and the components that it uses.\n\nIn addition to helping to create
       visual points of interest through the hierarchy of unity.\r"
     linkText: 
+    image: 
     url: 
-  - name: Header -<color="#...
-    heading: <color="#ffb300">WHY TO USE?</color>
-    text: 'Use this to organize important information about your project, such as:
+  - heading: <color="#ffb300">WHY TO USE?</color>
+    text: '<color="#ffb300">Use this to organize important information about your
+      project, such as:
 
-      -
-      How to use tutorial;
+      - How to use tutorial;</color>
 
       - Link utils;
 
-      - Important information for
-      the team;
+      -
+      Important information for the team;
 
-      - Hierarchy organizations with icons and informations about
-      the GameObject
+      - Hierarchy organizations with icons
+      and informations about the GameObject
 
       - etc..'
     linkText: 
+    image: 
     url: 
-  - name: Header -Features!
-    heading: Features!
+  - heading: Features!
     text: '- Allow HTML Tags at richText format;
 
       - Project Readme: Auto Open
@@ -56,16 +56,16 @@ MonoBehaviour:
 
       - Scene Objects Readme;
 
-      - Hierarchy icon to scene
-      objects readme;
+      - Hierarchy icon to scene objects
+      readme;
 
       - Field to URL adress.'
     linkText: 
+    image: 
     url: 
-  - name: Header -MORE ABOU...
-    heading: 'MORE ABOUT IT:'
+  - heading: 'MORE ABOUT IT:'
     text: '- Tutorials and source at:'
     linkText: Unity Reade GitHub
+    image: 
     url: https://github.com/neoneper/UnityReadme
   loadedLayout: 1
-  isRoot: 1
