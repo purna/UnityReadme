@@ -31,8 +31,8 @@ Scene Object Readme:
 # Features!
 ***
 
-- Allow HTML Tags at richText format - FIXED;
-- Add images / image images - ADDED;
+- Allow HTML Tags at richText format - **FIXED**;
+- Add images / image images - **ADDED**;
 - Project Readme: Auto Open at project launch; 
 - Project Readme: Open with tutorial Button at unity toolbar.
 - Scene Objects Readme;
