@@ -31,9 +31,8 @@ Scene Object Readme:
 # Features!
 ***
 
-- Allow HTML Tags at richText format - <span style="color:blue">FIXED</span>;
-- <font color='red'>Add images / image images</font>.
- 
+- Allow HTML Tags at richText format - FIXED;
+- Add images / image images - ADDED;
 - Project Readme: Auto Open at project launch; 
 - Project Readme: Open with tutorial Button at unity toolbar.
 - Scene Objects Readme;
